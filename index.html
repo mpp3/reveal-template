@@ -1,56 +1,172 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-			  <section data-markdown>
-			  <textarea data-template>
-			    This is JS:
-			    ```js [1|2-3]
-			    console.log('Hello, world');
-			    if (true)
-			       console.log('Bye!');
-			    ```
-			  </textarea>
-			  </section>
-			  <section>
-<iframe height="400px" width="100%" src="https://repl.it/@MANUELPEREZPIAR/Practica-3-1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-			    </section>
-			  <section>
-			    <div class="r-fit-text">Slide 1</div>
-			    
-			  </section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h2>Objeto</h2>
+					<p>Variable compuesta por variables y funciones</p>
+					<div class="r-stack">
+						<pre class="fragment fade-in-then-out"><code data-trim class="cpp">
+					int x1, y1, x2, y2;
+					int speed1x, speed1y, speed2x, speed2y;
+					x1 += speed1x * time;
+					y1 += speed1y * time;
+					x2 += speed2x * time;
+					y2 += speed2y * time;
+				</code></pre>
+						<pre class="fragment fade-in-then-out"><code data-trim class="cpp">
+					int x1, y1, speed1x, speed1y;
+					int x2, y2, speed2x, speed2y;
+					x1 += speed1x * time;
+					y1 += speed1y * time;
+					x2 += speed2x * time;
+					y2 += speed2y * time;
+				</code></pre>
+						<pre class="fragment fade-in-then-out"><code data-trim class="cpp">
+					int x1, y1, speed1x, speed1y;
+					x1 += speed1x * time;
+					y1 += speed1y * time;
+					int x2, y2, speed2x, speed2y;
+					x2 += speed2x * time;
+					y2 += speed2y * time;
+				</code></pre>
+						<pre class="fragment fade-in-then-out"><code data-trim class="cpp">
+					Vehicle v1;
+					v1.move();
+					Vehicle v2;
+					v2.move();
+				</code></pre>
+					</div>
+				</section>
+				<section>
+					<h2>Objeto</h2>
+					<div class="r-stack">
+						<p class="fragment fade-in-then-out">Variable compuesta por variables y funciones</p>
+						<p class="fragment fade-in-then-out">Variable compuesta por <span
+								style="color:red">variables</span>
+							y funciones</p>
+						<p class="fragment fade-in-then-out">Variable compuesta por <span
+								style="color:rgb(72, 166, 209);font-weight:bold;">propiedades</span> y funciones</p>
+						<p class="fragment fade-in-then-out">Variable compuesta por <span
+								style="color:rgb(72, 166, 209);font-weight: bold;">propiedades</span> y <span
+								style="color:red">funciones</span></p>
+						<p class="fragment fade-in-then-out">Variable compuesta por <span
+								style="color:rgb(72, 166, 209);font-weight: bold;">propiedades</span> y <span
+								style="color:rgb(231, 231, 99);font-weight: bold;">métodos</span></p>
+						<p class="fragment fade-in-then-out">Variable compuesta por <span
+								style="color:gray;font-weight: bold;">miembros</span></p>
+					</div>
+
+				</section>
+				<section>
+					<h2>Objeto</h2>
+					<p>Variable compuesta por <span
+							style="color:rgb(72, 166, 209);font-weight: bold;">propiedades</span> y
+						<span style="color:rgb(231, 231, 99);font-weight: bold;">métodos</span></p>
+					<p><span style="color:rgb(72, 166, 209);font-weight: bold;">propiedades</span> = <span
+							style="color:rgb(72, 166, 209);font-weight: bold;">estado</span> del objeto</p>
+					<p><span style="color:rgb(231, 231, 99);font-weight: bold;">métodos</span> = <span
+							style="color:rgb(231, 231, 99);font-weight: bold;">comportamiento </span>del objeto</p>
+				</section>
+			</section>
+			<section>
+				<h2>Clase</h2>
+				<p>Tipo de objetos definido por el <span style="font-style:italic">usuario</span></p>
+				<p style="font-size: 0.7em;" class="fragment grow">Especifica los tipos y nombres de sus <span
+						style="color:gray;font-weight: bold;">miembros</span></p>
+				<p style="font-size: 0.7em;" class="fragment grow">Todo objeto debe ser de una clase definida antes</p>
+				<p style="font-size: 0.7em;" class="fragment grow">Nombre con mayúscula</p>
+				<p style="font-size: 0.7em;" class="fragment grow">Clase = tipo definido por el usuario</p>
+			</section>
+			<section>
+				<section>
+					<h2>Cómo definir una clase</h2>
+					<pre><code class="cpp" data-line-numbers="1|2-4|5-7|8">class Class_name {
+  tipo propiedad1;
+  tipo propiedad2;
+  ...
+  tipo método1() { }
+  tipo método2() { }
+  ...
+};
+				</code></pre>
+				</section>
+				<section>
+					<iframe height="600px" width="100%" src="https://repl.it/@MANUELPEREZPIAR/Definir-clase?lite=true"
+						scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"
+						sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Cómo crear un objeto</h2>
+					<pre><code data-trim class="cpp">Clase nombre_objeto { valores_propiedades };</code></pre>
+				</section>
+				<section>
+					<iframe height="600px" width="100%" src="https://repl.it/@MANUELPEREZPIAR/Definir-clase?lite=true"
+						scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"
+						sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Cómo acceder a las propiedades y métodos de un objeto</h3>
+					<pre><code data-trim class="cpp">
+					nombre_objeto.propiedad = ...;
+					nombre_objeto.método();
+				</code></pre>
+				</section>
+				<section>
+					<iframe height="600px" width="100%" src="https://repl.it/@MANUELPEREZPIAR/Definir-clase?lite=true"
+						scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"
+						sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>
+				<section>
+					<h3>Acceso a miembros desde <span style="font-style: italic;">dentro</span></h3>
+					<p>Se puede usar <span style="color:yellowgreen;font-family: 'Courier New', Courier, monospace;">this</span> como nombre del objeto</p>
+					<p>Se puede escribir directamente la propiedad o método</p>
+				</section>
+				<section>
+					<iframe height="600px" width="100%" src="https://repl.it/@MANUELPEREZPIAR/Definir-clase?lite=true"
+						scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"
+						sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
